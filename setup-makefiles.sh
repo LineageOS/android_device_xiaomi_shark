@@ -8,6 +8,7 @@
 
 set -e
 
+# Required!
 export DEVICE=shark
 export VENDOR=xiaomi
 
