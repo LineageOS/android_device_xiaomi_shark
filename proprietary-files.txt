@@ -609,6 +609,9 @@ vendor/lib/vendor.qti.gnss@2.0.so
 vendor/lib/vendor.qti.gnss@2.1.so
 vendor/lib/vendor.qti.gnss@3.0.so
 
+# GNSS - from polaris V12.0.3.0.QDGMIXM
+vendor/lib64/libdataitems.so|6b785e73dac14d62bec0159f3eb0b49d4a995e06
+
 # Graphics (Adreno) - from PNX - RKQ1.200906.002
 vendor/lib/egl/eglSubDriverAndroid.so|cc5acc02889131a29b624b4c19ab90b8273f393d
 vendor/lib/egl/libEGL_adreno.so|ae30bbf20dc911308407da99cb263e8de6b2eecb
