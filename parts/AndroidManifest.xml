@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      Copyright (C) 2015-2016 The CyanogenMod Project
-                   2017-2021 The LineageOS Project
+                   2017-2021, 2024 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -41,6 +41,65 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
+
+        <activity
+            android:name=".SharkParts"
+            android:label="@string/sharkparts_title"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.system" />
+            <meta-data
+                android:name="com.android.settings.icon_tintable"
+                android:value="true" />
+            <meta-data
+                android:name="com.android.settings.icon"
+                android:resource="@drawable/sharkparts"/>
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:resource="@string/sharkparts_summary" />
+        </activity>
+
+        <activity
+            android:name=".logo.LogoActivity"
+            android:label="@string/logo_control_title"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
+
+        </activity>
+
+        <activity
+            android:name=".speaker.SpeakerActivity"
+            android:label="@string/speaker_control_title">
+        </activity>
+
+        <service
+                android:exported="true"
+                android:name=".logo.QsService"
+                android:icon="@drawable/logo"
+                android:label="@string/logo_control_title"
+                android:foregroundServiceType="specialUse"
+                android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="tile" />
+        </service>
+
+        <activity android:name=".KeyHandler" />
 
         <activity
             android:name=".dirac.DiracActivity"

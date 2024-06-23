@@ -5,3 +5,16 @@
 -keep class org.lineageos.settings.doze.* {
   *;
 }
+
+-keep class org.lineageos.settings.logo.* {
+  *;
+}
+
+-keep class org.lineageos.settings.speaker.* {
+  *;
+}
+
+# Keep keyhandler constructor
+-keep public class * implements com.android.internal.os.DeviceKeyHandler {
+    public <init>(android.content.Context);
+}
