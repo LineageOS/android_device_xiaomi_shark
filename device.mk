@@ -246,6 +246,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     fastbootd
 
+# Fingerprint
+PRODUCT_PACKAGES += \
+    vendor.goodix.hardware.fingerprintextension@1.0.vendor
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.0.vendor \

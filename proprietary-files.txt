@@ -544,8 +544,7 @@ vendor/lib/vendor.qti.esepowermanager@1.0.so
 
 # Fingerprint
 vendor/lib64/hw/fingerprint.default.so:vendor/lib64/hw/fingerprint.goodix.sdm845.so
-vendor/lib64/libgoodixhwfingerprint.so
-vendor/lib64/libvendor.goodix.hardware.fingerprintextension@1.0.so
+vendor/lib64/libgoodixhwfingerprint.so|33f9cf91b30b72ad9ed5884a28e252429fb21d9b
 vendor/lib64/libgf_ca.so
 vendor/lib64/libgf_hal.so
 
