@@ -15,8 +15,3 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/lineage_shark.mk
-
-COMMON_LUNCH_CHOICES := \
-    lineage_shark-user \
-    lineage_shark-userdebug \
-    lineage_shark-eng 
