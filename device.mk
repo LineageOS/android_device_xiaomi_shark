@@ -381,10 +381,6 @@ PRODUCT_PACKAGES += \
     librmnetctl \
     libsqlite.vendor:64
 
-# Recovery
-PRODUCT_PACKAGES += \
-    librecovery_updater_xiaomi
-
 # RenderScript
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
