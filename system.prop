@@ -12,6 +12,13 @@ ro.bluetooth.a2dp_offload.supported=true
 # Camera
 camera.disable_zsl_mode=true
 
+# System property for camera
+persist.vendor.camera.multicam.hwsync=TRUE
+# Enable FPS match
+persist.vendor.camera.multicam.fpsmatch=TRUE
+# Enable SW frame sync
+persist.vendor.camera.multicam.framesync=1 
+
 # Data modules
 persist.data.df.dev_name=rmnet_usb0
 persist.vendor.data.mode=concurrent
