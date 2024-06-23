@@ -186,6 +186,10 @@ PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 PRODUCT_PACKAGES += \
     fstab.qcom
 
+# Device init scripts
+PRODUCT_PACKAGES += \
+    init.target.rc
+
 # Device-specific settings
 PRODUCT_PACKAGES += \
     XiaomiParts
