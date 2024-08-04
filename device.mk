@@ -227,9 +227,15 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.3.vendor \
     android.hardware.drm-service.clearkey
 
+# fastbootd
+PRODUCT_PACKAGES += \
+    fastbootd
+
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.3-service.xiaomi
+    android.hardware.biometrics.fingerprint@2.3-service.xiaomi \
+    liblzma.vendor \
+    vendor.goodix.hardware.fingerprintextension@1.0.vendor
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
@@ -244,14 +250,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps.conf \
     $(LOCAL_PATH)/gps/lowi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/lowi.conf \
     $(LOCAL_PATH)/gps/xtwifi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/xtwifi.conf
-
-# fastbootd
-PRODUCT_PACKAGES += \
-    fastbootd
-
-# Fingerprint
-PRODUCT_PACKAGES += \
-    vendor.goodix.hardware.fingerprintextension@1.0.vendor
 
 # Health
 PRODUCT_PACKAGES += \
