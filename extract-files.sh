@@ -1,16 +1,15 @@
 #!/bin/bash
 #
-# Copyright (C) 2016 The CyanogenMod Project
-# Copyright (C) 2017-2020, 2024 The LineageOS Project
+# SPDX-FileCopyrightText: 2016 The CyanogenMod Project
+# SPDX-FileCopyrightText: 2017-2024 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
 
 set -e
 
-# Required!
-export DEVICE=shark
-export VENDOR=xiaomi
+DEVICE=shark
+VENDOR=xiaomi
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
@@ -25,40 +24,17 @@ if [ ! -f "${HELPER}" ]; then
 fi
 source "${HELPER}"
 
-function blob_fixup() {
-    case "${1}" in
-        system_ext/etc/permissions/qcrilhook.xml)
-            sed -i "s/\/product\/framework\//\/system_ext\/framework\//g" "${2}"
-            ;;
-        system_ext/etc/permissions/qti_libpermissions.xml)
-            sed -i "s/name=\"android.hidl.manager-V1.0-java/name=\"android.hidl.manager@1.0-java/g" "${2}"
-            ;;
-        system_ext/lib64/lib-imsvideocodec.so)
-            grep -q "libgui_shim.so" "${2}" || ${PATCHELF} --add-needed "libgui_shim.so" "${2}"
-            ;;
-        vendor/bin/pm-service)
-            grep -q libutils-v33.so "${2}" || "${PATCHELF}" --add-needed "libutils-v33.so" "${2}"
-            ;;
-        vendor/lib/camera/components/com.qti.node.watermark.so)
-            grep -q "libpiex_shim.so" "${2}" || ${PATCHELF} --add-needed "libpiex_shim.so" "${2}"
-            ;;
-        vendor/lib64/libgoodixhwfingerprint.so)
-            patchelf --replace-needed "libvendor.goodix.hardware.fingerprintextension@1.0.so" "vendor.goodix.hardware.fingerprintextension@1.0.so" "${2}"
-            ;;
-    esac
-}
-
 # Default to sanitizing the vendor folder before extraction
 CLEAN_VENDOR=true
 
-ONLY_TARGET=
-SECTION=
+ONLY_FIRMWARE=
 KANG=
+SECTION=
 
 while [ "${#}" -gt 0 ]; do
     case "${1}" in
-        --only-target )
-                ONLY_TARGET=true
+        --only-firmware )
+                ONLY_FIRMWARE=true
                 ;;
         -n | --no-cleanup )
                 CLEAN_VENDOR=false
@@ -67,7 +43,8 @@ while [ "${#}" -gt 0 ]; do
                 KANG="--kang"
                 ;;
         -s | --section )
-                SECTION="${2}"; shift
+                SECTION="${2}"
+                shift
                 CLEAN_VENDOR=false
                 ;;
         * )
@@ -81,11 +58,52 @@ if [ -z "${SRC}" ]; then
     SRC="adb"
 fi
 
-if [ -z "${ONLY_TARGET}" ]; then
-    # Initialize the helper for device
-    setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" true "${CLEAN_VENDOR}"
+function blob_fixup() {
+    case "${1}" in
+        system_ext/etc/permissions/qcrilhook.xml)
+            [ "$2" = "" ] && return 0
+            sed -i "s/\/product\/framework\//\/system_ext\/framework\//g" "${2}"
+            ;;
+        system_ext/etc/permissions/qti_libpermissions.xml)
+            [ "$2" = "" ] && return 0
+            sed -i "s/name=\"android.hidl.manager-V1.0-java/name=\"android.hidl.manager@1.0-java/g" "${2}"
+            ;;
+        system_ext/lib64/lib-imsvideocodec.so)
+            [ "$2" = "" ] && return 0
+            grep -q "libgui_shim.so" "${2}" || "${PATCHELF}" --add-needed "libgui_shim.so" "${2}"
+            ;;
+        vendor/bin/pm-service)
+            [ "$2" = "" ] && return 0
+            grep -q "libutils-v33.so" "${2}" || "${PATCHELF}" --add-needed "libutils-v33.so" "${2}"
+            ;;
+        vendor/lib/camera/components/com.qti.node.watermark.so)
+            [ "$2" = "" ] && return 0
+            grep -q "libpiex_shim.so" "${2}" || "${PATCHELF}" --add-needed "libpiex_shim.so" "${2}"
+            ;;
+        vendor/lib64/libgoodixhwfingerprint.so)
+            [ "$2" = "" ] && return 0
+            "${PATCHELF}" --replace-needed "libvendor.goodix.hardware.fingerprintextension@1.0.so" "vendor.goodix.hardware.fingerprintextension@1.0.so" "${2}"
+            ;;
+        *)
+            return 1
+            ;;
+    esac
 
+    return 0
+}
+function blob_fixup_dry() {
+    blob_fixup "$1" ""
+}
+
+# Initialize the helper
+setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false "${CLEAN_VENDOR}"
+
+if [ -z "${ONLY_FIRMWARE}" ]; then
     extract "${MY_DIR}/proprietary-files.txt" "${SRC}" "${KANG}" --section "${SECTION}"
+fi
+
+if [ -z "${SECTION}" ]; then
+    extract_firmware "${MY_DIR}/proprietary-firmware.txt" "${SRC}"
 fi
 
 "${MY_DIR}/setup-makefiles.sh"
