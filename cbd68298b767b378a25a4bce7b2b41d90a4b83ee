@@ -16,6 +16,24 @@
       "message": "Fast-forward this HEAD to lineage-22.0.",
       "revId": "cbd68298b767b378a25a4bce7b2b41d90a4b83ee",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "04e2c3d0_37f7f051",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2024-12-31T10:18:58Z",
+      "side": 1,
+      "message": "Only this HEAD!",
+      "parentUuid": "a23502bc_0fba08b1",
+      "revId": "cbd68298b767b378a25a4bce7b2b41d90a4b83ee",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ],
   "submitRequirementResults": []
