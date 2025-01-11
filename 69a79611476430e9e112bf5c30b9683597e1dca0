@@ -16,6 +16,24 @@
       "message": "Hmmm, hopefully the HAL changes get merged before next build. :P",
       "revId": "69a79611476430e9e112bf5c30b9683597e1dca0",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e0c7519d_91067536",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 26313
+      },
+      "writtenOn": "2025-01-11T17:42:22Z",
+      "side": 1,
+      "message": "Me too xD",
+      "parentUuid": "c74cb807_e4f9c673",
+      "revId": "69a79611476430e9e112bf5c30b9683597e1dca0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ],
   "submitRequirementResults": []
