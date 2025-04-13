@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1eb76f6_8d39d9bd",
+        "filename": "device.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-04-13T15:30:49Z",
+      "side": 1,
+      "message": "Isn\u0027t this a dep too?",
+      "range": {
+        "startLine": 154,
+        "startChar": 4,
+        "endLine": 154,
+        "endChar": 22
+      },
+      "revId": "8d4c19d25c006f330cd78a72f4f3d87d678b660d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e336383_07959e68",
+        "filename": "device.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-04-13T15:30:49Z",
+      "side": 1,
+      "message": "All these can go. Also, why do you have these in the proprietary-files list?",
+      "range": {
+        "startLine": 254,
+        "startChar": 4,
+        "endLine": 256,
+        "endChar": 33
+      },
+      "revId": "8d4c19d25c006f330cd78a72f4f3d87d678b660d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
