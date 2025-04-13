@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b5dfa2b8_d9b5aeaf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-04-13T17:30:01Z",
+      "side": 1,
+      "message": "Just remove vendor/lib64/libscveFaceLandmarks in the bing clean up change.",
+      "revId": "2dd7917438215ac4cc98eb15a6d87658fd5d8ca2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
