@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e86dab67_d14f3356",
+        "filename": "device.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 26313
+      },
+      "writtenOn": "2025-04-13T15:47:54Z",
+      "side": 1,
+      "message": "libvidhance with DISABLE_CHECKELF, libdemangle resolve one symbol depends",
+      "parentUuid": "f1eb76f6_8d39d9bd",
+      "range": {
+        "startLine": 154,
+        "startChar": 4,
+        "endLine": 154,
+        "endChar": 22
+      },
+      "revId": "8d4c19d25c006f330cd78a72f4f3d87d678b660d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8e336383_07959e68",
         "filename": "device.mk",
         "patchSetId": 1
@@ -37,6 +61,30 @@
       "writtenOn": "2025-04-13T15:30:49Z",
       "side": 1,
       "message": "All these can go. Also, why do you have these in the proprietary-files list?",
+      "range": {
+        "startLine": 254,
+        "startChar": 4,
+        "endLine": 256,
+        "endChar": 33
+      },
+      "revId": "8d4c19d25c006f330cd78a72f4f3d87d678b660d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8d552ce0_58534d31",
+        "filename": "device.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 26313
+      },
+      "writtenOn": "2025-04-13T15:47:54Z",
+      "side": 1,
+      "message": "Removed in https://review.lineageos.org/c/LineageOS/android_device_xiaomi_shark/+/427172",
+      "parentUuid": "8e336383_07959e68",
       "range": {
         "startLine": 254,
         "startChar": 4,
