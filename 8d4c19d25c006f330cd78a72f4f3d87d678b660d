@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3382b6d4_679d8a66",
+        "filename": "device.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-04-13T15:54:48Z",
+      "side": 1,
+      "message": "DISABLE_CHECKELF is not the same as DISABLE_DEPS. Isn\u0027t libdemangle showing up as dep of libvidhance after being patched?",
+      "parentUuid": "e86dab67_d14f3356",
+      "range": {
+        "startLine": 154,
+        "startChar": 4,
+        "endLine": 154,
+        "endChar": 22
+      },
+      "revId": "8d4c19d25c006f330cd78a72f4f3d87d678b660d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8e336383_07959e68",
         "filename": "device.mk",
         "patchSetId": 1
@@ -85,6 +109,30 @@
       "side": 1,
       "message": "Removed in https://review.lineageos.org/c/LineageOS/android_device_xiaomi_shark/+/427172",
       "parentUuid": "8e336383_07959e68",
+      "range": {
+        "startLine": 254,
+        "startChar": 4,
+        "endLine": 256,
+        "endChar": 33
+      },
+      "revId": "8d4c19d25c006f330cd78a72f4f3d87d678b660d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "abbe8ea9_30dad522",
+        "filename": "device.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-04-13T15:54:48Z",
+      "side": 1,
+      "message": "Yes, but you can remove these from here now, can\u0027t you?",
+      "parentUuid": "8d552ce0_58534d31",
       "range": {
         "startLine": 254,
         "startChar": 4,
