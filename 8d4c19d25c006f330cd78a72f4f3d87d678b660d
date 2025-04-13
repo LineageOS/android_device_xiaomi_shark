@@ -96,6 +96,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c05726a1_9f6b9594",
+        "filename": "device.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-04-13T17:15:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d335e997_304a9397",
+      "range": {
+        "startLine": 154,
+        "startChar": 4,
+        "endLine": 154,
+        "endChar": 22
+      },
+      "revId": "8d4c19d25c006f330cd78a72f4f3d87d678b660d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8e336383_07959e68",
@@ -181,6 +205,30 @@
       "side": 1,
       "message": "Now too here",
       "parentUuid": "abbe8ea9_30dad522",
+      "range": {
+        "startLine": 254,
+        "startChar": 4,
+        "endLine": 256,
+        "endChar": 33
+      },
+      "revId": "8d4c19d25c006f330cd78a72f4f3d87d678b660d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "77f6484a_3292e17f",
+        "filename": "device.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-04-13T17:15:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7b48a695_c07fe0cd",
       "range": {
         "startLine": 254,
         "startChar": 4,
